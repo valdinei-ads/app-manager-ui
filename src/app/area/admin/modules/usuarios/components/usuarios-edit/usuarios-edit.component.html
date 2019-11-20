@@ -1,0 +1,96 @@
+    <form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <mat-card>
+            <mat-card-title>
+                <h4>Edição de apps</h4>
+            </mat-card-title>
+            <mat-divider></mat-divider>
+    
+            <mat-card-content style="margin-top: 3em">
+    
+                <div class="row">
+                    <mat-form-field class="col-6">
+                        <input matInput formControlName="nome" placeholder="Nome" required>
+                        <mat-error>
+                            O campo nome é obrigatório.
+                        </mat-error>
+                    </mat-form-field>
+    
+                    <mat-form-field class="col-3">
+                        <input matInput formControlName="idade" type="number" placeholder="Idade" required>
+                        <mat-error>
+                            O campo idade é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+    
+                    <mat-form-field class="col-3">
+                        <mat-label>Genero</mat-label>
+                        <mat-select formControlName="genero" required>
+                            <mat-option>--</mat-option>
+                            <mat-option [value]="1">Masculino</mat-option>
+                            <mat-option [value]="2">Feminino</mat-option>
+                        </mat-select>
+                        <mat-error>
+                            O campo genero é obrigatório
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+    
+                <div class="row">
+                    <mat-form-field class="col-6">
+                        <mat-label>Tipo de Documento</mat-label>
+                        <mat-select formControlName="tipoDocumento" required>
+                            <mat-option>--</mat-option>
+                            <mat-option [value]="1">RG</mat-option>
+                            <mat-option [value]="2">CPF</mat-option>
+                        </mat-select>
+                        <mat-error>
+                            O campo tipo de documento é obrigatório.
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <input matInput formControlName="documento" maxlength="12" placeholder="Documento" required>
+                        <mat-error>
+                            O campo documento é obrigatório.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+    
+                <div class="row">
+                    <mat-form-field class="col-6">
+                        <input matInput formControlName="pai" placeholder="Nome do Pai" required>
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <input matInput formControlName="mae" placeholder="Nome da Mãe" required>
+                    </mat-form-field>
+                </div>
+    
+                <div class="row">
+                    <mat-form-field class="col-2">
+                        <input matInput formControlName="telefone" placeholder="Telefone" mask="(XX) XXXX-XXXX">
+                    </mat-form-field>
+                    <mat-form-field class="col-2">
+                        <input matInput formControlName="celular" placeholder="Celular" mask="(XX) X XXXX-XXXX">
+                    </mat-form-field>
+                    <mat-form-field class="col-6">
+                        <input matInput placeholder="Email" formControlName="email" required>
+                        <mat-error>
+                            Por favor informe um email válido.
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="col-2">
+                        <input matInput placeholder="senha" formControlName="password" required>
+                        <mat-error>
+                            Por favor, informa senha.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+    
+            </mat-card-content>
+    
+            <mat-card-actions>
+                <input type="submit" class="btn btn-lg btn-success" value="Salvar">
+                <input type="button" class="btn btn-lg btn-danger" (click)="Back()" style="margin-left: 1em"
+                    value="Cancelar">
+            </mat-card-actions>
+        </mat-card>
+    </form>

@@ -1,0 +1,38 @@
+<form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <mat-card>
+        <mat-card-title>
+            <h4 class="col-12">Cadastro de apps</h4>
+        </mat-card-title>
+        <mat-divider></mat-divider>
+
+        <mat-card-content style="margin-top: 3em">
+            
+            <mat-form-field class="col-6">
+                <input matInput formControlName="nome" placeholder="Nome">
+            </mat-form-field>
+
+            <mat-form-field class="col-6">
+                <mat-label>Tipo de App</mat-label>
+                <mat-select formControlName="tipoAppId" required>
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let tipo of tiposApp" [value]="tipo.tipoAppId">
+                        {{tipo.nome}}
+                    </mat-option>
+                </mat-select>
+                <!-- <mat-error *ngIf="tipoAppId.hasError('required')">Please choose an animal</mat-error> -->
+                <!-- <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+            </mat-form-field>
+
+            <mat-form-field class="col-12">
+                <textarea matInput formControlName="descricao" placeholder="Descricao" ows="3"></textarea>
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <div class="col-12">
+                <input type="submit" class="btn btn-lg btn-success" value="Salvar">
+                <input type="button" class="btn btn-lg btn-danger" (click)="Back()" style="margin-left: 1em" value="Cancelar">
+            </div>
+        </mat-card-actions>
+    </mat-card>
+</form>

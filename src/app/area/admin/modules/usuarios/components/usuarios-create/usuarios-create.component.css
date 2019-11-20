@@ -1,0 +1,10 @@
+.tbody{
+    height: 10em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tbody .tr{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}

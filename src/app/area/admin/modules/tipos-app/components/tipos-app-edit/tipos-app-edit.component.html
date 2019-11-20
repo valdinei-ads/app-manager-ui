@@ -1,0 +1,25 @@
+<form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-title>
+      <h4>Cadastro de tipos de apps</h4>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+
+    <input type="hidden" formControlName="tipoAppId" />
+
+    <mat-card-content style="margin-top: 3em">
+      <mat-form-field style="width: 100%">
+        <input matInput formControlName="nome" placeholder="Nome">
+      </mat-form-field>
+
+      <mat-form-field style="width: 100%">
+        <textarea matInput formControlName="descricao" placeholder="Descricao" ows="3"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <input type="submit" class="btn btn-md btn-success" value="Salvar">
+      <input type="button" class="btn btn-md btn-danger" (click)="Back()" style="margin-left: 1em" value="Cancelar">
+    </mat-card-actions>
+  </mat-card>
+</form>

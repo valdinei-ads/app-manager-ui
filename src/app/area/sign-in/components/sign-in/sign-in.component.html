@@ -1,0 +1,59 @@
+<div class="general">
+
+    <div class="row">
+        <div class="left col-md-3 text-center" style="border: 1px solid; ">
+
+            <div class="welcome">
+                App Manager
+            </div>
+
+            <div class="form">
+
+                <div class="title">
+                    Sign in
+                </div>
+
+                <div class="fields">
+                    <form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="">
+                                    <input matInput type="text" formControlName="email" placeholder="E-mail" required>
+                                    <mat-icon matSuffix><i class="fa fa-user"></i></mat-icon>
+                                    <mat-error>
+                                        O campo e-mail é obrigatório.
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="">
+                                    <input matInput type="password" formControlName="password" placeholder="Senha"
+                                        required>
+                                    <mat-icon matSuffix><i class="fa fa-lock"></i></mat-icon>
+                                    <mat-error>
+                                        O campo Senha é obrigatório.
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-md-12">
+                                <button mat-raised-button color="primary">Primary</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+                Version 1.0
+            </div>
+        </div>
+        <div class="right col-md-9" style="border: 1px solid">
+        </div>
+    </div>
+</div>
